@@ -10,7 +10,7 @@
     <hr class="sidebar-divider my-0">
 
     <li class="nav-item">
-        <a class="nav-link {{ Request::is('/index*') ? 'active' : '' }}" aria-current="page"  href="/index">
+        <a class="nav-link {{ Request::is('/admin*') ? 'active' : '' }}" aria-current="page"  href="/admin">
             <i class="fas fa-fw fa-tachometer-alt"></i>
             <span>Dashboard</span></a>
     </li>
@@ -33,7 +33,7 @@
     </li>
 
     <li class="nav-item">
-        <a class="nav-link {{ Request::is('/*') ? 'active' : '' }}" href="create">
+        <a class="nav-link {{ Request::is('/roti') ? 'active' : '' }}" href="roti">
             <i class="fas fa-clipboard-list"></i>
             <span>Data Roti</span>
         </a>

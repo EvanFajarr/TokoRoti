@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('roti', function (Blueprint $table) {
             $table->id();
-            $table->string('nama');
+            $table->string('nama')->unique();
             $table->string('harga');
             $table->string('foto');
             $table->text('desc');

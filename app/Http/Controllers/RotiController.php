@@ -60,13 +60,14 @@ class RotiController extends Controller
 
         $request->validate([
             'harga' => 'required|numeric',
-            'nama' => 'required',
+            'nama' => 'required|unique:roti',
             'desc' => 'required',
             'foto' => 'required|image|file|max:10000'
         ], [
             'harga.required' => 'Nomor induk wajib diisi',
             'harga.numeric' => 'Nomor induk wajib diisi dalam angka',
             'nama.required' => 'Nama wajib diisi',
+            'nama.unique' => 'Nama sudah ada',
             'desc.required' => 'Descripsi wajib diisi',
             'foto.required' => 'Silakan masukkan foto',
             'foto.image' => 'Foto hanya diperbolehkan berekstensi JPEG, JPG, PNG, dan GIF'

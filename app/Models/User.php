@@ -20,8 +20,8 @@ class User extends Authenticatable
     protected $fillable = [
         'name',
         'alamat',
+        'email',
         'no',
-        'username',
         'password',
         'role',
     ];
@@ -36,6 +36,7 @@ class User extends Authenticatable
         'remember_token',
     ];
 
+    public $timestamps = false;
     /**
      * The attributes that should be cast.
      *

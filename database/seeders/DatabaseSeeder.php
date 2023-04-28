@@ -22,6 +22,11 @@ class DatabaseSeeder extends Seeder
         // ]);
         $this->call([
             RotiTableSeeder::class,
+
+        ]);
+        $this->call([
+            UserTableSeeder::class,
+            
         ]);
     }
 }

@@ -1,7 +1,10 @@
 <?php
-use App\Http\Controllers\AdminController;
-use App\Http\Controllers\RotiController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\CartController;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\RotiController;
+use App\Http\Controllers\AdminController;
+use App\Http\Controllers\LoginController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,9 +20,37 @@ use Illuminate\Support\Facades\Route;
 // Route::get('/', function () {
 //     return view('welcome');
 // });
-Route::get('/admin',[AdminController::class,'index']);
 
 
-Route::resource('roti',RotiController::class);
 
 
+
+    Route::resource('roti',RotiController::class)->middleware(['admin']);
+    Route::get('/admin',[AdminController::class,'index'])->middleware(['admin']);
+
+
+
+
+
+
+Route::resource('/',HomeController::class);
+Route::get('/detail/{id}',[AdminController::class,'detail']);
+
+
+
+
+Route::get('/login',[LoginController::class,'index'])->name('login')->middleware(['user']);
+Route::post('/login/login',[LoginController::class,'login']);
+//register
+Route::get('/login/register',[LoginController::class,'register'])->middleware(['user']);
+Route::post('/login/create',[LoginController::class,'create']);
+//logout
+Route::post('/logout',[LoginController::class,'logout']);
+
+
+//cart
+Route::post('/addtocart',[CartController::class,'cart'])->name('addtocart')->middleware(['session']);
+
+
+Route::get('cartlist',[CartController::class,'cartpage'])->name('cartlist')->middleware(['session']);
+Route::get('/hapuscart/{id}',[CartController::class,'hapuscart']);

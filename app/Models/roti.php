@@ -17,7 +17,10 @@ class roti extends Model
 
     protected $guarded = ['id'];
 
-
+    public function cart()
+    {
+        return $this->belongsTo(cart::class);
+    }
     protected $table = 
         'roti';
 }

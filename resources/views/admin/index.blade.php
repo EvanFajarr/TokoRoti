@@ -1,5 +1,6 @@
 @extends('template.admin')
 
 @section('name')
-    <h1>admin</h1>
+  
+  <h1 class="text-bold">Welcome {{ Auth::user()->name }}</h1>
 @endsection

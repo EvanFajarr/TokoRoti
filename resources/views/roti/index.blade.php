@@ -11,7 +11,7 @@
         <div class="my-3 p-3 bg-body rounded shadow-sm">
                 <!-- FORM PENCARIAN -->
                 <div class="pb-3">
-                  <form class="d-flex" action="{{'data'}}" method="get">
+                  <form class="d-flex" action="{{'roti'}}" method="get">
                       <input class="form-control me-1" type="search" name="katakunci" value="{{ Request::get('katakunci') }}" placeholder="Search" aria-label="Search">
                       <button class="btn btn-secondary" type="submit">Search</button>
                   </form>
