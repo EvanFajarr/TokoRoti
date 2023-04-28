@@ -4,7 +4,7 @@
         <div class="">
             <img src="images/lg.png" style="width: 35px">
         </div>
-        <div class="sidebar-brand-text mx-3">Admin Rotiku</div>
+        <a href="/">  <div class="sidebar-brand-text mx-3">Admin Rotiku</a></div>
     </a>
 
     <hr class="sidebar-divider my-0">

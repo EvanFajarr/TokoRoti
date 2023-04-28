@@ -33,7 +33,11 @@
                   <div class="card customer-cards">
                     <div class="card-body">
                       <div class="text-center">
+                        @if ($item->foto)
                         <img  style="max-height:100%; max-width:100%;"src='{{ url('foto').'/'.$item->foto }}' class="d-block w-100 img-fluid" id="gambar" alt="picture"/> 
+                       {{-- @else
+                       <img  style="max-height:100%; max-width:100%;"src='/foto/foto1.jpg' class="d-block w-100 img-fluid" id="gambar" alt="picture"/>  --}}
+                       @endif
                         <p class="m-0 py-3 text-muted">{{ $item->nama }} </p>
                         <div class="content-divider m-auto"></div>
                         <h6 class="card-title pt-3">{{ $item->harga }}</h6>

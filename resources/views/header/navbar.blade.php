@@ -1,7 +1,7 @@
-<?//php 
-// use App\Http\Controllers\CartController;
+<?php 
+ //use App\Http\Controllers\CartController;
 // $total = CartController::cartItem();
-//?>
+?>
 
 <header id="header-section">
     <nav class="navbar navbar-expand-lg pl-3 pl-sm-0" id="navbar">
@@ -23,7 +23,7 @@
             </button>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#header-section">Home </a>
+            <a class="nav-link" href="/">Home </a>
           </li>
        
           <li class="nav-item">
@@ -44,9 +44,10 @@
             @if (Auth::user())
 
             <li class="nav-item">
-              <a class="nav-link" href="/cartlist">Cart </a>
+              <a class="nav-link "  href="/cartlist">Cart</a>
+             
             </li>
-
+        
             <li class="nav-item">
               <a class="nav-link" href="#case-studies-section">Order</a>
             </li>

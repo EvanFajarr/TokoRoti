@@ -14,11 +14,6 @@ class RotiTableSeeder extends Seeder
      */
     public function run()
     {
-        roti::create([
-            'nama'          => 'Roti Anjay',
-            'foto'        => '',
-            'desc'     => 'Harga enak  anjayy',
-            'harga'         => 'Rp 155.000',
-        ]);
+        
     }
 }

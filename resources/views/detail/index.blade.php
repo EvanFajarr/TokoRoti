@@ -1,3 +1,7 @@
+
+
+
+<title>Detail Roti</title>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
   <div class="container mt-5 mb-5">
@@ -15,7 +19,7 @@
                     <div class="col-md-6">
                         <div class="kolom p-4">
                             <a href='{{url('/')}}' class="btn btn-outline-success"><i class="bi bi-skip-backward-btn-fill"></i></a>
-                                <h5 class="text-uppercase">Status: {{ $roti->status }}</h5>
+                                <h5 class="text-uppercase">{{ $roti->status }}</h5>
                                 <div class="lokasi d-flex flex-row align-items-center">
                                     <span class="lokasi">{{ $roti->nama }} </span>
                             </div>
@@ -24,7 +28,7 @@
                             <form action="{{ route('addtocart') }}" method="POST">
                               @csrf
                               <input type="hidden" name="roti_id"  value="{{$roti->id}}">
-                                   <button class="btn btn-primary"><i class="bi bi-skip-backward-btn-cart"></i></button>
+                                   <button class="btn btn-primary"><i class="bi bi-cart-check"></i></button>
                              
                              <form>
                         </div>

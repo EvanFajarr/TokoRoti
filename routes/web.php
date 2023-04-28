@@ -54,3 +54,4 @@ Route::post('/addtocart',[CartController::class,'cart'])->name('addtocart')->mid
 
 Route::get('cartlist',[CartController::class,'cartpage'])->name('cartlist')->middleware(['session']);
 Route::get('/hapuscart/{id}',[CartController::class,'hapuscart']);
+

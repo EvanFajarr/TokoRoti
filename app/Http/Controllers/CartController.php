@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\cart;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;;
 class CartController extends Controller
@@ -15,11 +16,9 @@ class CartController extends Controller
         return redirect('/')->with('success', 'Berhasil memasukkan roti ke cart');
     }
 
-    // static function cartItem(){
+    // public static function cartItem(){
     //         $userId= Auth::user()->id;
-    //         return cart::where('user_id', $userId)->count();
-        
-       
+    //         return redirect('/')->cart::where('user_id', $userId)->count();
     // }
     public function cartpage(){
         $userId= Auth::user()->id;
