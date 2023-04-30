@@ -49,7 +49,7 @@
             </li>
         
             <li class="nav-item">
-              <a class="nav-link" href="#case-studies-section">Order</a>
+              <a class="nav-link" href="/orderUser">Order</a>
             </li>
   
               <div class="dropdown">

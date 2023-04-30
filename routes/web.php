@@ -5,6 +5,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\RotiController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\OrderController;
 
 /*
 |--------------------------------------------------------------------------
@@ -55,3 +56,17 @@ Route::post('/addtocart',[CartController::class,'cart'])->name('addtocart')->mid
 Route::get('cartlist',[CartController::class,'cartpage'])->name('cartlist')->middleware(['session']);
 Route::get('/hapuscart/{id}',[CartController::class,'hapuscart']);
 
+
+//order
+Route::get('/checkout',[OrderController::class,'index']);
+Route::post('/checkout',[OrderController::class,'store']);
+
+//order tampil admin
+Route::get('/orderList',[OrderController::class,'admin']);
+//order tampil userr
+Route::get('/orderUser',[OrderController::class,'user']);
+
+
+//order edit 
+Route::get('/edit/{id}',[OrderController::class,'edit']);
+Route::put('/edit/{id}',[OrderController::class,'update']);

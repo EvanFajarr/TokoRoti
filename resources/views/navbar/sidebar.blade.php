@@ -20,7 +20,7 @@
         barang
     </div>
     <li class="nav-item">
-        <a class="nav-link {{ Request::is('/*') ? 'active' : '' }}" href="create">
+        <a class="nav-link {{ Request::is('/*') ? 'active' : '' }}" href="orderList">
             <i class="fas fa-clipboard-list"></i>
             <span>Order</span>
         </a>

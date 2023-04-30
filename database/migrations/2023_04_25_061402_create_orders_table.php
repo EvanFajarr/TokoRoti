@@ -18,12 +18,13 @@ return new class extends Migration
             $table->string('nama');
             $table->string('no');
             $table->string('alamat');
+            $table->enum('pembayaran', ['cod', 'bayar_ke_toko']);
             $table->text('item');
             $table->text('note')->nullable();
             $table->date('tanggal');
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
-            $table->enum('status', ['berhasil', 'diproses','dibayar','belumbayar']);
+            $table->enum('status', ['terkirim', 'diproses','pengiriman','selesai']);
             $table->timestamps();
         });
     }
