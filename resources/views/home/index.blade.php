@@ -49,9 +49,30 @@
             </div>
 
           </section> 
-<!-- Modal for Contact - us Button -->
-<form action='{{ url('saran') }}'  method='post'  enctype="multipart/form-data">
 
+
+
+
+          <section style="padding:50px;" class="digital-marketing-service" id="digital-marketing-section">
+            <div class="row align-items-center">
+              <div class="col-12 col-lg-7 grid-margin grid-margin-lg-0" data-aos="fade-right">
+                <h3 class="m-0">We Offer a Full Range<br>of Digital Marketing Services!</h3>
+                <div class="col-lg-7 col-xl-6 p-0">
+                  <p class="py-4 m-0 text-muted">Lorem ipsum dolor sit amet, tincidunt vestibulum. Fusce egeabus consectetuer turpis, suspendisse.</p>
+                  <p class="font-weight-medium text-muted">Lorem ipsum dolor sit amet, tincidunt vestibulum. Fusce egeabus consectetuer</p>
+                </div>    
+              </div>
+              <div class="col-12 col-lg-5 p-0 img-digital grid-margin grid-margin-lg-0" data-aos="fade-left">
+                <img src="roti1.jpg" alt="" class="img-fluid">
+              </div>
+            </div>
+    
+          </section>     
+
+
+
+<!-- Modal for Contact - us Button -->
+<form action='{{ url('/saran') }}'  method='post'  >
     @csrf
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
@@ -63,16 +84,16 @@
         <div class="modal-body">
           <form>
             <div class="form-group">
-              <label for="Name">Name</label>
-              <input type="text" class="form-control" name='name'id="name" >
+              <label for="nama">Nama</label>
+              <input type="text" class="form-control" value="{{Session::get('nama')}}"  name='nama'id="nama" >
             </div>
             <div class="form-group">
               <label for="Email">Email</label>
-              <input type="text" class="form-control" name='email' id="email">
+              <input type="text" class="form-control" name='email' value="{{Session::get('email')}}"  id="email">
             </div>
             <div class="form-group">
-              <label for="saran">saran</label>
-              <textarea class="form-control" name='saran'  id="saran" placeholder="tambahkan saranmu"></textarea>
+              <label for="saran">Saran</label>
+              <textarea class="form-control summernote" name='saran'  value="{{Session::get('saran')}}"  id="saran" placeholder="tambahkan saranmu"></textarea>
             </div>
           </form>
         </div>

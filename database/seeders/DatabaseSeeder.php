@@ -28,5 +28,9 @@ class DatabaseSeeder extends Seeder
             UserTableSeeder::class,
             
         ]);
+        $this->call([
+            CategorySeeder::class,
+            
+        ]);
     }
 }

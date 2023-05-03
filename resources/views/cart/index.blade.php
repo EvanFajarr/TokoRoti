@@ -13,10 +13,7 @@
                   $total = 0;
               @endphp
               <div class="card">
-                <div class="card-body">
-                  <div class="card">
                     <div class="card-body">
-                      <a href='{{url('/')}}' class="btn btn-outline-success"><i class="bi bi-skip-backward-btn-fill"></i></a>
                       @if(!empty($roti))
                         @foreach ($roti as $data => $value)
                         @php
@@ -59,8 +56,7 @@
                 </div>
               </div>
             </div>
-          </div>
-        </div>
+
         
      
 @endsection 

@@ -57,11 +57,12 @@ class RotiController extends Controller
         Session::flash('harga', $request->harga);
         Session::flash('nama', $request->nama);
         Session::flash('desc', $request->desc);
-
+        Session::flash('category', $request->category);
         $request->validate([
             'harga' => 'required|numeric',
             'nama' => 'required|unique:roti',
             'desc' => 'required',
+            'category' => 'required',
             'foto' => 'required|image|file|max:10000'
         ], [
             'harga.required' => 'Nomor induk wajib diisi',
@@ -81,6 +82,7 @@ class RotiController extends Controller
         $data = [
             'harga' => $request->input('harga'),
             'nama' => $request->input('nama'),
+            'category' => $request->input('category'),
             'desc' => $request->input('desc'),
             'foto' => $foto_nama
         ];
@@ -126,10 +128,13 @@ class RotiController extends Controller
         Session::flash('desc', $request->desc);
         Session::flash('nama', $request->nama);
         Session::flash('harga', $request->harga);
+        // Session::flash('category', $request->category);
 
         $request->validate([
             'nama' => 'required',
-            'desc' => 'required'
+            'desc' => 'required',
+            'harga' => 'required',
+            // 'category' => 'required'
         ], [
             'harga.numeric' => 'harga wajib diisi dalam angka',
             'nama.required' => 'Nama wajib diisi',
@@ -139,6 +144,8 @@ class RotiController extends Controller
         $data = [
             'nama' => $request->input('nama'),
             'desc' => $request->input('desc'),
+            'harga' => $request->input('harga'),
+            // 'category' => $request->input('category'),
         ];
 
         if ($request->hasFile('foto')) {

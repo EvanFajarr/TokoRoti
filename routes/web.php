@@ -3,9 +3,12 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\RotiController;
+use App\Http\Controllers\UserController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\OrderController;
+use App\Http\Controllers\SaranController;
+use App\Http\Controllers\CategoryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -58,15 +61,34 @@ Route::get('/hapuscart/{id}',[CartController::class,'hapuscart']);
 
 
 //order
-Route::get('/checkout',[OrderController::class,'index']);
+Route::get('/checkout',[OrderController::class,'index'])->middleware(['session']);
 Route::post('/checkout',[OrderController::class,'store']);
 
 //order tampil admin
-Route::get('/orderList',[OrderController::class,'admin']);
+Route::get('/orderList',[OrderController::class,'admin'])->middleware(['admin']);
 //order tampil userr
 Route::get('/orderUser',[OrderController::class,'user']);
 
 
 //order edit 
-Route::get('/edit/{id}',[OrderController::class,'edit']);
+Route::get('/edit/{id}',[OrderController::class,'edit'])->middleware(['admin']);
 Route::put('/edit/{id}',[OrderController::class,'update']);
+
+//get data user
+Route::get('/user',[UserController::class,'index'])->middleware(['admin']);
+//create user n admin
+Route::get('/user/create',[UserController::class,'create'])->middleware(['admin']);
+Route::post('/user/create',[UserController::class,'store']);
+
+Route::delete('/delete/{id}',[UserController::class,'destroy'])->middleware(['admin']);
+
+
+Route::resource('/',HomeController::class);
+
+Route::resource('/saran', SaranController::class);
+
+
+Route::resource('category',CategoryController::class)->middleware(['admin']);
+
+Route::get('/roti/create',[CategoryController::class,'tampil']);
+// Route::get('/roti/{id}/edit',[CategoryController::class,'oke']);

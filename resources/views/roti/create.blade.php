@@ -28,6 +28,20 @@
         </div>
 
         <div class="mb-3 row">
+            <label for="category" class="col-sm-2 col-form-label">category</label>
+            <div class="col-sm-10">
+            <select type="text" name="category"  name="category"  value="{{Session::get('category')}}" id="category"  class="form-control">
+            @foreach ($category as $categorys)
+            <option > {{ $categorys->category }}</option>
+            @endforeach
+          </select>
+          <p class="text-muted">*silahkan pilih category yang sesuai</p>
+            </div>
+        </div>
+    
+
+
+        <div class="mb-3 row">
             <label for="harga" class="col-sm-2 col-form-label">harga</label>
             <div class="col-sm-10">
                 <input type="text" class="form-control"  value="{{Session::get('harga')}}"   name='harga'id="harga">

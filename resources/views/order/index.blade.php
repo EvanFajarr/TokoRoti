@@ -14,8 +14,8 @@
                         <div class="mb-3 text-right">
                           <a href="/cartlist" class="btn btn-danger">Back to Cart</a>
                         </div>
-                        <div class="col-6">
-                          <div class="card h-100">
+                        <div class="col-12">
+                          <div class="card">
                             <div class="card-body">
                               <form action="" method="POST">
                                 @csrf
@@ -46,36 +46,36 @@
                                 <label for="item"  class="col-sm-2 col-form-label">item</label>
                                 <div class="col-sm-10"  name="item" >
                                   <input type="text" name="item" class="form-control"
-                                   value=" @foreach ($roti as $data){{ $data->roti->nama }}{{ $data->roti->harga }},  @endforeach" readonly >
-                                 
+                                   value=" @foreach ($roti as $data){{ $data->roti->nama }}-{{ $data->roti->harga }},  @endforeach" readonly >    
                                 </div>
                             </div>
                                 @endif
                             </div>
                           </div>
                         </div>
-                        <div class="col-6">
+                  
+                        <div class="col-12">
                           @php
                               $total=0
                           @endphp
-                          <div class="card h-100">
+                          <div class="card">
                             <div class="card-body">
-                              <div class="card">
-                                <div class="card-body">
                                   @if(!empty($roti))
                                   @foreach ($roti as $data => $value)
                                   @php
                                   $total = $total + str_replace(".","",str_replace(",00","",str_replace('Rp ', '' , (int)$value->roti->harga)))
                               @endphp
                                     <div class="row">
-                                      <div class="col-6">
+                                      <div class="col-4">
                                         @if ($value->roti->foto)
-                                        <img style='max-height:100%;max-width:100%' src='{{ url('foto').'/'.$value->roti->foto }}'/>
+                                        <img style='height:200px;width:200px' src='{{ url('foto').'/'.$value->roti->foto }}'/>
                                         @endif
+                                      </div>
+                                      <div class="col-2">
+
                                       </div>
                                       <div class="col-6">
                                         <h4>{{$value->roti->nama}}</h4>
-      
                                         <p>Price  : {{$value->roti->harga}}</p>
                                       </div>
                                       <div class="col">

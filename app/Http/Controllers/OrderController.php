@@ -72,7 +72,6 @@ public function store(Request $request)
         $userId= Auth::user()->id;
         $order = order::where('user_id', $userId)->get();
         return view('home.order')->with('order', $order);
-    
     }
     public function edit($id)
     {

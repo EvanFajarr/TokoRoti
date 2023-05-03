@@ -26,15 +26,19 @@
                                 <div class="col-sm-10">
                                     <input type="text" class="form-control" name='harga' value="{{$data->harga}}" id="harga">
                                 </div>
-                            </div>
-                            {{-- <div class="mb-3 row">
-                                <label for="desc" class="col-sm-2 col-form-label">Descripsi</label>
-                                <div class="col-sm-10">
-                                <textarea class="form-control  summernote" name="desc"  value="{{$data->desc}}" id="desc"></textarea>
-                                </div>
-                            </div>
-                     --}}
-                    
+{{--                   
+                                <div class="mb-3 row">
+                                    <label for="category" class="col-sm-2 col-form-label">category</label>
+                                    <div class="col-sm-10">
+                                    <select type="text" name="category"  name="category"  value="{{$data->category}}" id="category"  class="form-control">
+                                    @foreach ($category as $categorys)
+                                    <option > {{ $categorys->category }}</option>
+                                    @endforeach
+                                  </select>
+                                  <p class="text-muted">*silahkan pilih category yang sesuai</p>
+                                    </div>
+                                </div> --}}
+
 
                      <div class="mb-3 row">
                         <label for="desc" class="col-sm-2 col-form-label">desc</label>
