@@ -33,7 +33,7 @@
     </li>
 
     <li class="nav-item">
-        <a class="nav-link {{ Request::is('/roti') ? 'active' : '' }}" href="roti">
+        <a class="nav-link {{ Request::is('/*') ? 'active' : '' }}" href="roti">
             <i class="fas fa-clipboard-list"></i>
             <span>Data Roti</span>
         </a>
@@ -41,7 +41,7 @@
 
 
     <li class="nav-item">
-        <a class="nav-link {{ Request::is('/category') ? 'active' : '' }}" href="category">
+        <a class="nav-link {{ Request::is('/*') ? 'active' : '' }}" href="category">
             <i class="fas fa-clipboard-list"></i>
             <span>Category</span>
         </a>
@@ -49,7 +49,7 @@
 
 
     <li class="nav-item">
-        <a class="nav-link {{ Request::is('/saran') ? 'active' : '' }}" href="saran">
+        <a class="nav-link {{ Request::is('/*') ? 'active' : '' }}" href="saran">
             <i class="fas fa-clipboard-list"></i>
             <span>Data Saran</span>
         </a>

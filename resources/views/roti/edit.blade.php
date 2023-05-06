@@ -1,7 +1,7 @@
 @extends('template.admin')
 @section('name')
 
-                    <form action='{{ url('roti/'.$data->id) }}'  method='post'>
+                    <form action='{{ url('roti/'.$data->id) }}'  method='post' enctype="multipart/form-data">
                         @include('pesan.pesan')
                         <a href='{{url('roti')}}' class="btn btn-outline-success"><i class="bi bi-skip-backward-btn-fill"></i></a>
 

@@ -8,6 +8,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\SaranController;
+use App\Http\Controllers\AlamatController;
 use App\Http\Controllers\CategoryController;
 
 /*
@@ -92,3 +93,21 @@ Route::resource('category',CategoryController::class)->middleware(['admin']);
 
 Route::get('/roti/create',[CategoryController::class,'tampil']);
 // Route::get('/roti/{id}/edit',[CategoryController::class,'oke']);
+
+
+Route::resource('alamat',AlamatController::class)->middleware(['session']);
+
+
+Route::delete('/hapus/{id}',[OrderController::class,'destroy']);
+
+
+// Route::get('/checkout',[AlamatController::class,'tampil']);
+
+
+//send email
+Route::get('sendEmail', function () {
+    \Mail::raw('haloo pelanggan baru', function ($message) {
+        $message->to('evanafajar12455@gmail.com', 'Evan');
+        $message->subject('regist');
+    });
+});

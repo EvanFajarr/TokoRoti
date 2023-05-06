@@ -6,6 +6,7 @@ namespace App\Http\Controllers;
 use App\Models\cart;
 use App\Models\roti;
 use App\Models\order;
+use App\Models\alamat;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
@@ -14,9 +15,16 @@ class OrderController extends Controller
 {
 
 public function index(){
-    $userId= Auth::user()->id;
-    $roti = cart::where('user_id', $userId)->get();
-    return view('order.index')->with('roti', $roti);
+    // $userId= Auth::user()->id;
+    // $roti = cart::where('user_id', $userId)->get();
+    // return view('order.index')->with('roti', $roti);
+
+
+    return view('order.index', [
+        'alamat' => alamat::orderBy('id', 'desc')->get(),
+        $userId= Auth::user()->id,
+        'roti' => cart::where('user_id', $userId)->get(),
+    ]);
 }
 
 public function store(Request $request)
@@ -93,9 +101,14 @@ public function store(Request $request)
             'status' => $request->status,
 
         ];
+        
         order::where('id', $id)->update($order);
         return redirect()->to('orderList')->with('success', 'Berhasil mengubah status');
     }
     
-
+    public function destroy($id)
+    {
+        order::where('id', $id)->delete();
+        return redirect('/')->with('success', 'Berhasil hapus order');
+    }
 }

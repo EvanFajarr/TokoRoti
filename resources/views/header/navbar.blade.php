@@ -61,6 +61,8 @@
                   @if (Auth::user()->role == "admin")
                   <a class="dropdown-item" href="/admin">Dasboard</a>
                   @endif
+
+                  <a class="dropdown-item" href="/alamat">Tambah alamat</a>
                   {{-- <a class="dropdown-item" href="/order">Order</a> --}}
                   <form action="{{ url('/logout') }}" method="post">
                     @csrf

@@ -70,8 +70,12 @@ class LoginController extends Controller
         'no' => $request->no,
         'password' => Hash::make($request->password)
     ];
-    User::create($data);
-
+   
+//    $hehe = User::create($data);
+// \Mail::raw('Welcomee' .$hehe->name, function ($message) use($hehe) {
+//             $message->to('$hehe->email', '$hehe->name');
+//             $message->subject('Success');
+//         });
 
             $infologin=[
                 'name'=>$request->name,
@@ -79,7 +83,10 @@ class LoginController extends Controller
                 'password'=>$request->password,
                 'alamat' => $request->alamat,
                 'no' => $request->no,
+                
             ];
+          
+          
             if(Auth::attempt($infologin)) {
                 return redirect('/')->with('success','Berhasil login');
             }else{

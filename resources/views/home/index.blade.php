@@ -29,7 +29,9 @@
               </div>
 
               <div class="owl-carousel owl-theme grid-margin">
+             
                 @foreach ($data as $item)
+                @if ($item->category == "makanan")
                   <div class="card customer-cards">
                     <div class="card-body">
                       <div class="text-center">
@@ -45,6 +47,7 @@
                    </div>
                     </div>
                   </div>
+                  @endif
                   @endforeach
             </div>
 
@@ -69,6 +72,87 @@
     
           </section>     
 
+
+
+          <section class="Roti" id="Roti">
+            <div class="row">
+              <div class="col-12 text-center pb-5">
+                <h2></h2>
+                <h6 class="section-subtitle text-muted m-0">Pilihan Minuman</h6>
+              </div>
+
+              <div class="owl-carousel owl-theme grid-margin">
+             
+                @foreach ($data as $item)
+                @if ($item->category == "minuman")
+                  <div class="card customer-cards">
+                    <div class="card-body">
+                      <div class="text-center">
+                        @if ($item->foto)
+                        <img  style="max-height:100%; max-width:100%;"src='{{ url('foto').'/'.$item->foto }}' class="d-block w-100 img-fluid" id="gambar" alt="picture"/> 
+                       {{-- @else
+                       <img  style="max-height:100%; max-width:100%;"src='/foto/foto1.jpg' class="d-block w-100 img-fluid" id="gambar" alt="picture"/>  --}}
+                       @endif
+                        <p class="m-0 py-3 text-muted">{{ $item->nama }} </p>
+                        <div class="content-divider m-auto"></div>
+                        <h6 class="card-title pt-3">{{ $item->harga }}</h6>
+                        <a href="detail/{{ $item['id'] }}" class="btn btn-outline-primary" >Detail</a>
+                   </div>
+                    </div>
+                  </div>
+                  @endif
+                  @endforeach
+            </div>
+
+          </section> 
+
+          <section class="digital-marketing-service" id="digital-marketing-section">
+            <div class="row align-items-center">
+              <div class="col-12 col-lg-7 text-center flex-item grid-margin" data-aos="fade-right">
+                <img src="es teh.jpg" alt="" class="img-fluid">
+              </div>
+              <div class="col-12 col-lg-5 flex-item grid-margin" data-aos="fade-left">
+                <h3 class="m-0">Leading Digital Agency<br>for  Business Solution.</h3>
+                <div class="col-lg-9 col-xl-8 p-0">
+                  <p class="py-4 m-0 text-muted">Power-packed with impressive features and well-optimized, this template is designed to provide the best performance in all circumstances.</p>
+                  <p class="pb-2 font-weight-medium text-muted">Its smart features make it a powerful stand-alone website building tool.</p>
+                </div>
+                <button class="btn btn-info">Readmore</button>
+              </div>
+            </div>
+          </section>
+
+          <section class="Roti" id="Roti">
+            <div class="row">
+              <div class="col-12 text-center pb-5">
+                <h2></h2>
+                <h6 class="section-subtitle text-muted m-0">Pilihan Snack</h6>
+              </div>
+
+              <div class="owl-carousel owl-theme grid-margin">
+             
+                @foreach ($data as $item)
+                @if ($item->category == "snack")
+                  <div class="card customer-cards">
+                    <div class="card-body">
+                      <div class="text-center">
+                        @if ($item->foto)
+                        <img  style="max-height:100%; max-width:100%;"src='{{ url('foto').'/'.$item->foto }}' class="d-block w-100 img-fluid" id="gambar" alt="picture"/> 
+                       {{-- @else
+                       <img  style="max-height:100%; max-width:100%;"src='/foto/foto1.jpg' class="d-block w-100 img-fluid" id="gambar" alt="picture"/>  --}}
+                       @endif
+                        <p class="m-0 py-3 text-muted">{{ $item->nama }} </p>
+                        <div class="content-divider m-auto"></div>
+                        <h6 class="card-title pt-3">{{ $item->harga }}</h6>
+                        <a href="detail/{{ $item['id'] }}" class="btn btn-outline-primary" >Detail</a>
+                   </div>
+                    </div>
+                  </div>
+                  @endif
+                  @endforeach
+            </div>
+
+          </section> 
 
 
 <!-- Modal for Contact - us Button -->

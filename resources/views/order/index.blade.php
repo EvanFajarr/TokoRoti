@@ -24,10 +24,21 @@
                                   <label for="name" class="form-label">Name</label>
                                   <input type="text" name="nama" class="form-control" value="{{ Auth::user()['name'] }}">
                                 </div>
-                                <div class="mb-3">
+                                {{-- <div class="mb-3">
                                   <label for="name" class="form-label">Address</label>
                                   <input type="text" name="alamat" class="form-control" value="{{ Auth::user()['alamat'] }}">
-                                </div>
+                                </div> --}}
+                                <div class="mb-3 row">
+                                  <label for="alamat" class="form-label">alamat</label>
+                                  <select type="text" name="alamat"  name="alamat" id="alamat"  class="form-control">
+                                  <option >{{ Auth::user()['alamat'] }}</option>
+                                    @foreach ($alamat as $item)
+                                    <option >{!! $item->patokan !!},{{ $item->desa }},{{ $item->kecamatan }},{{ $item->kabupaten }}</option>
+                                    @endforeach
+                                
+                                </select>  
+                              </div>
+
                                 <div class="mb-3">
                                   <label for="name" class="form-label">Phone Number</label>
                                   <input type="text" name="no" class="form-control" value="{{ Auth::user()['no'] }}">
